@@ -6,18 +6,19 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 // import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-// import Discover from "./pages/Discover";
 import All from "./pages/All";
+import Table from "./pages/Discover"
 
 function App() {
 
 
 return (
+ 
   <Router>
       <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/all" component={All} />
-          {/* <Route exact path="/discover" component={Discover} /> */}
+          <Route exact path="/discover" component={Table} />
       </div>
     </Router>
 );

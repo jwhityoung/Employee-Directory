@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useTable, useSortBy } from 'react-table';
 import { columns, data } from '../components/dataSource';
 
+
 function All() {
     const {
         getTableProps,
@@ -20,7 +21,7 @@ function All() {
         <div>
         <div><Navbar /></div>
         <div>
-        <table {...getTableProps()}>
+        <table className="table table-bordered" {...getTableProps()}>
     <thead>
       {headerGroups.map(headerGroup => (
         <tr {...headerGroup.getHeaderGroupProps()}>
