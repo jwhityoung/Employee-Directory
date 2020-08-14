@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { useTable, useSortBy, useFilters } from 'react-table';
 import { columns, data } from '../components/dataSource';
-// export default Discover;
 
 function Table() {
     const [filterInput, setFilterInput] = useState("");
@@ -36,9 +35,9 @@ function Table() {
         <input
           value={filterInput}
           onChange={handleFilterChange}
-          placeholder={"Search name"}
+          placeholder={"Search"}
         />
-        <table {...getTableProps()}>
+        <table className="table table-bordered" {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -79,101 +78,3 @@ function Table() {
   }
 
 export default Table;
-
-// function GlobalFilter({
-//     preGlobalFilteredRows,
-//     globalFilter,
-//     setGlobalFilter,
-// }) {
-//     const [value, setValue] = React.useState(globalFilter)
-//     const onChange = useAsyncDebounce(value => {
-//         setGlobalFilter(value || undefined)
-//     }, 200)
-
-//     return (
-//         <span>
-//             Search{''}
-//             <input
-//                 value={value || ''}
-//                 onChange={e => {
-//                     setValue(e.target.value);
-//                     onChange(e.target.value);
-//                 }}
-//                 placeholder='Search'
-//             />
-//         </span>
-//     );
-//             }
-
-    
-//     function DefaultColumnFilter({
-//         column: { filterValue, preFilteredRows, setFilter }
-//     }) {
-//         return (
-//             <input
-//                 value={filterValue || ''}
-//                 onChange={e => {
-//                     setFilter(e.target.value || undefined)
-//                 }}
-//                 placeholder={'Search'}
-//             />
-//         );
-//             }
-
-
-
-
-//         function Table({ columns, data }) {
-//             const filterTypes = React.useMemo(
-//                 () => ({
-//                     text: (rows, id, filterValue) => {
-//                         return rows.filter(row => {
-//                             const rowValue = row.values[id]
-//                             return rowValue !== undefined
-//                                 ? String(rowValue)
-//                                     .startsWith(String(filterValue))
-//                                 : true
-//                         })
-//                     },
-//                 }),
-//                 []
-//             )
-
-//             const defaultColumn = React.useMemo(
-//                 () => ({
-//                     Filter: DefaultColumnFilter,
-//                 }),
-//                 []
-//             )
-
-//             const {
-//                 getTableProps,
-//                 getTableBodyProps,
-//                 headerGroups,
-//                 rows,
-//                 prepareRow,
-//                 state,
-//                 visibleColumns,
-//                 preGlobalFilteredRows,
-//                 setGlobalFilter,
-//             } = useTable(
-//                 {
-//                     columns,
-//                     data,
-//                     defaultColumn,
-//                     filterTypes,
-//                 },
-//                 useFilters,
-//                 useGlobalFilter
-//             )
-
-//         }
-    
-
-//     function Discover() {
-//         return (
-//             <div>
-//                 <Table columns={columns} data={data} />
-//             </div>
-//         )
-//     }
