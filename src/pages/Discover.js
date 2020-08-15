@@ -24,7 +24,7 @@ function Table() {
   
     const handleFilterChange = e => {
       const value = e.target.value || undefined;
-      setFilter("show.name", value);
+      setFilter("role", value);
       setFilterInput(value);
     };
   
@@ -35,20 +35,21 @@ function Table() {
         <input
           value={filterInput}
           onChange={handleFilterChange}
-          placeholder={"Search"}
+          placeholder={"Search by Role"}
         />
         <table className="table table-bordered" {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
+      
                   <th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     className={
                       column.isSorted
                         ? column.isSortedDesc
-                          ? "sort-desc"
-                          : "sort-asc"
+                          ? ""
+                          : ""
                         : ""
                     }
                   >

@@ -6,25 +6,13 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#77BFC7"}}>
       <Link className="navbar-brand" to="/">
         Employee Directory
       </Link>
       <div>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link
-              to="/all"
-              className={
-                window.location.pathname === "/all"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-            See Employees
-            </Link>
-          </li>
-          <li className="nav-item">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item mr-auto">
             <Link
               to="/discover"
               className={
@@ -33,7 +21,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-            Discover
+            Employees
             </Link>
           </li>
         </ul>

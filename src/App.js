@@ -17,7 +17,7 @@ return (
   <Router>
       <div>
           <Route exact path="/" component={Home} />
-          <Route exact path="/all" component={All} />
+          {/* <Route exact path="/employees" component={E} /> */}
           <Route exact path="/discover" component={Table} />
       </div>
     </Router>
